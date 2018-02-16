@@ -12,7 +12,16 @@ import (
 var wg sync.WaitGroup
 
 func main() {
+	/*
+		opt := config.BroadcastingStationOption{}
+		opt.Host = "127.0.0.1"
+		opt.Port = 8911
+		opt.Path = "broadcasting"
+
+		config.SetBroadcastingStation(opt)
+	*/
 	register.RegisterProcessMessageFunc(ProcessMessage)
+	//register.RegisterProcessMessageFromBroadcastingFunc(ProcessMessageFromBroadcasingStation)
 	re := room.CreateRoom("festival")
 	fmt.Println("创建房间结果：", re)
 	rs := run.Run()
